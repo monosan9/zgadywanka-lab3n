@@ -1,4 +1,6 @@
-﻿namespace GraGUI
+﻿using System;
+
+namespace GraGUI
 {
     partial class Form1
     {
@@ -35,6 +37,7 @@
             this.labelDo = new System.Windows.Forms.Label();
             this.textBoxOd = new System.Windows.Forms.TextBox();
             this.labelOd = new System.Windows.Forms.Label();
+            this.buttonPrzerwij = new System.Windows.Forms.Button();
             this.groupBoxLosuj.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +49,7 @@
             this.buttonNowaGra.TabIndex = 0;
             this.buttonNowaGra.Text = "Nowa gra";
             this.buttonNowaGra.UseVisualStyleBackColor = true;
-            this.buttonNowaGra.Click += new System.EventHandler(this.buttonNowaGra_Click);
+            this.buttonNowaGra.Click += new System.EventHandler(this.ButtonNowaGra_Click);
             // 
             // groupBoxLosuj
             // 
@@ -71,7 +74,7 @@
             this.buttonLosuj.TabIndex = 2;
             this.buttonLosuj.Text = "Wylosuj";
             this.buttonLosuj.UseVisualStyleBackColor = true;
-            this.buttonLosuj.Click += new System.EventHandler(this.buttonLosuj_Click);
+            this.buttonLosuj.Click += new System.EventHandler(this.ButtonLosuj_Click);
             // 
             // textBoxDo
             // 
@@ -105,11 +108,23 @@
             this.labelOd.TabIndex = 0;
             this.labelOd.Text = "Zakres od:";
             // 
+            // buttonPrzerwij
+            // 
+            this.buttonPrzerwij.Location = new System.Drawing.Point(219, 12);
+            this.buttonPrzerwij.Name = "buttonPrzerwij";
+            this.buttonPrzerwij.Size = new System.Drawing.Size(75, 23);
+            this.buttonPrzerwij.TabIndex = 2;
+            this.buttonPrzerwij.Text = "Przerwij";
+            this.buttonPrzerwij.UseVisualStyleBackColor = true;
+            this.buttonPrzerwij.Visible = false;
+            this.buttonPrzerwij.Click += new System.EventHandler(this.ButtonPrzerwij_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 450);
+            this.Controls.Add(this.buttonPrzerwij);
             this.Controls.Add(this.groupBoxLosuj);
             this.Controls.Add(this.buttonNowaGra);
             this.Name = "Form1";
@@ -129,6 +144,8 @@
         private System.Windows.Forms.Label labelDo;
         private System.Windows.Forms.TextBox textBoxOd;
         private System.Windows.Forms.Label labelOd;
+        private System.Windows.Forms.Button buttonPrzerwij;
+        
     }
 }
 
