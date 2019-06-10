@@ -38,7 +38,14 @@ namespace GraGUI
             this.textBoxOd = new System.Windows.Forms.TextBox();
             this.labelOd = new System.Windows.Forms.Label();
             this.buttonPrzerwij = new System.Windows.Forms.Button();
+            this.labelOdgadnij = new System.Windows.Forms.Label();
+            this.labelCzas = new System.Windows.Forms.Label();
+            this.textBoxTwojaLiczba = new System.Windows.Forms.TextBox();
+            this.groupBoxZgaduj = new System.Windows.Forms.GroupBox();
+            this.buttonSprawdz = new System.Windows.Forms.Button();
+            this.buttonZakoncz = new System.Windows.Forms.Button();
             this.groupBoxLosuj.SuspendLayout();
+            this.groupBoxZgaduj.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonNowaGra
@@ -119,11 +126,71 @@ namespace GraGUI
             this.buttonPrzerwij.Visible = false;
             this.buttonPrzerwij.Click += new System.EventHandler(this.ButtonPrzerwij_Click);
             // 
+            // labelOdgadnij
+            // 
+            this.labelOdgadnij.AutoSize = true;
+            this.labelOdgadnij.Location = new System.Drawing.Point(6, 16);
+            this.labelOdgadnij.Name = "labelOdgadnij";
+            this.labelOdgadnij.Size = new System.Drawing.Size(143, 13);
+            this.labelOdgadnij.TabIndex = 3;
+            this.labelOdgadnij.Text = "Odgadnij wylosowaną liczbę:";
+            // 
+            // labelCzas
+            // 
+            this.labelCzas.AutoSize = true;
+            this.labelCzas.Location = new System.Drawing.Point(204, 16);
+            this.labelCzas.Name = "labelCzas";
+            this.labelCzas.Size = new System.Drawing.Size(58, 13);
+            this.labelCzas.TabIndex = 4;
+            this.labelCzas.Text = "Twój czas:";
+            // 
+            // textBoxTwojaLiczba
+            // 
+            this.textBoxTwojaLiczba.Location = new System.Drawing.Point(9, 42);
+            this.textBoxTwojaLiczba.Name = "textBoxTwojaLiczba";
+            this.textBoxTwojaLiczba.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTwojaLiczba.TabIndex = 5;
+            // 
+            // groupBoxZgaduj
+            // 
+            this.groupBoxZgaduj.Controls.Add(this.buttonSprawdz);
+            this.groupBoxZgaduj.Controls.Add(this.labelOdgadnij);
+            this.groupBoxZgaduj.Controls.Add(this.labelCzas);
+            this.groupBoxZgaduj.Controls.Add(this.textBoxTwojaLiczba);
+            this.groupBoxZgaduj.Location = new System.Drawing.Point(13, 158);
+            this.groupBoxZgaduj.Name = "groupBoxZgaduj";
+            this.groupBoxZgaduj.Size = new System.Drawing.Size(302, 82);
+            this.groupBoxZgaduj.TabIndex = 6;
+            this.groupBoxZgaduj.TabStop = false;
+            this.groupBoxZgaduj.Visible = false;
+            // 
+            // buttonSprawdz
+            // 
+            this.buttonSprawdz.Location = new System.Drawing.Point(126, 40);
+            this.buttonSprawdz.Name = "buttonSprawdz";
+            this.buttonSprawdz.Size = new System.Drawing.Size(75, 23);
+            this.buttonSprawdz.TabIndex = 6;
+            this.buttonSprawdz.Text = "Sprawdź";
+            this.buttonSprawdz.UseVisualStyleBackColor = true;
+            // 
+            // buttonZakoncz
+            // 
+            this.buttonZakoncz.Location = new System.Drawing.Point(220, 334);
+            this.buttonZakoncz.Name = "buttonZakoncz";
+            this.buttonZakoncz.Size = new System.Drawing.Size(75, 23);
+            this.buttonZakoncz.TabIndex = 7;
+            this.buttonZakoncz.Text = "Zakończ";
+            this.buttonZakoncz.UseVisualStyleBackColor = true;
+            this.buttonZakoncz.Visible = false;
+            this.buttonZakoncz.Click += new System.EventHandler(this.ButtonZakoncz_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 450);
+            this.ClientSize = new System.Drawing.Size(334, 369);
+            this.Controls.Add(this.buttonZakoncz);
+            this.Controls.Add(this.groupBoxZgaduj);
             this.Controls.Add(this.buttonPrzerwij);
             this.Controls.Add(this.groupBoxLosuj);
             this.Controls.Add(this.buttonNowaGra);
@@ -131,6 +198,8 @@ namespace GraGUI
             this.Text = "Form1";
             this.groupBoxLosuj.ResumeLayout(false);
             this.groupBoxLosuj.PerformLayout();
+            this.groupBoxZgaduj.ResumeLayout(false);
+            this.groupBoxZgaduj.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -145,7 +214,12 @@ namespace GraGUI
         private System.Windows.Forms.TextBox textBoxOd;
         private System.Windows.Forms.Label labelOd;
         private System.Windows.Forms.Button buttonPrzerwij;
-        
+        private System.Windows.Forms.Label labelOdgadnij;
+        private System.Windows.Forms.Label labelCzas;
+        private System.Windows.Forms.TextBox textBoxTwojaLiczba;
+        private System.Windows.Forms.GroupBox groupBoxZgaduj;
+        private System.Windows.Forms.Button buttonSprawdz;
+        private System.Windows.Forms.Button buttonZakoncz;
     }
 }
 

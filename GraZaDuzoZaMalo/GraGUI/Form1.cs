@@ -25,11 +25,15 @@ namespace GraGUI
             groupBoxLosuj.Visible = true;
             buttonNowaGra.Enabled = false;
             buttonPrzerwij.Visible = true;
+            buttonZakoncz.Visible = true;
+            
+                
             
         }
         private void ButtonPrzerwij_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void ButtonLosuj_Click(object sender, EventArgs e)
@@ -37,7 +41,8 @@ namespace GraGUI
             // wczytaj zakres do losowania
             int a = int.Parse( textBoxOd.Text );
             int b = int.Parse( textBoxDo.Text );
-           
+            
+
 
             // utwórz grę
             g = new Gra(a, b);
@@ -45,14 +50,17 @@ namespace GraGUI
             textBoxOd.Enabled = false;
             textBoxDo.Enabled = false;
             buttonLosuj.Enabled = false;
-            buttonPrzerwij.Visible = true;
-            buttonPrzerwij.Enabled = true;
+            groupBoxZgaduj.Visible = true;
+            
             
 
             // wyświetl kolejne elementy formularza
            
         }
 
-        
+        private void ButtonZakoncz_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
