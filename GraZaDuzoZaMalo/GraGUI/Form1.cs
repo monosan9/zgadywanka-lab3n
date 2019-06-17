@@ -26,8 +26,7 @@ namespace GraGUI
             buttonNowaGra.Enabled = false;
             buttonPrzerwij.Visible = true;
             buttonZakoncz.Visible = true;
-            
-                
+               
             
         }
         private void ButtonPrzerwij_Click(object sender, EventArgs e)
@@ -39,14 +38,21 @@ namespace GraGUI
         private void ButtonLosuj_Click(object sender, EventArgs e)
         {
             // wczytaj zakres do losowania
-            int a = int.Parse( textBoxOd.Text );
-            int b = int.Parse( textBoxDo.Text );
+            try
+            {
+                int a = int.Parse(textBoxOd.Text);
+                int b = int.Parse(textBoxDo.Text);
+                g = new Gra(a, b);
+            }
+
+            catch (FormatException)
+            {
+                MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
             
-
-
             // utwórz grę
-            g = new Gra(a, b);
-
+           
             textBoxOd.Enabled = false;
             textBoxDo.Enabled = false;
             buttonLosuj.Enabled = false;

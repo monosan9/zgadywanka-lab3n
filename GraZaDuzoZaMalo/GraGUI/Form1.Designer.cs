@@ -44,6 +44,7 @@ namespace GraGUI
             this.groupBoxZgaduj = new System.Windows.Forms.GroupBox();
             this.buttonSprawdz = new System.Windows.Forms.Button();
             this.buttonZakoncz = new System.Windows.Forms.Button();
+            this.buttonHistoria = new System.Windows.Forms.Button();
             this.groupBoxLosuj.SuspendLayout();
             this.groupBoxZgaduj.SuspendLayout();
             this.SuspendLayout();
@@ -184,11 +185,21 @@ namespace GraGUI
             this.buttonZakoncz.Visible = false;
             this.buttonZakoncz.Click += new System.EventHandler(this.ButtonZakoncz_Click);
             // 
+            // buttonHistoria
+            // 
+            this.buttonHistoria.Location = new System.Drawing.Point(22, 334);
+            this.buttonHistoria.Name = "buttonHistoria";
+            this.buttonHistoria.Size = new System.Drawing.Size(75, 23);
+            this.buttonHistoria.TabIndex = 8;
+            this.buttonHistoria.Text = "Historia";
+            this.buttonHistoria.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 369);
+            this.Controls.Add(this.buttonHistoria);
             this.Controls.Add(this.buttonZakoncz);
             this.Controls.Add(this.groupBoxZgaduj);
             this.Controls.Add(this.buttonPrzerwij);
@@ -220,6 +231,7 @@ namespace GraGUI
         private System.Windows.Forms.GroupBox groupBoxZgaduj;
         private System.Windows.Forms.Button buttonSprawdz;
         private System.Windows.Forms.Button buttonZakoncz;
+        private System.Windows.Forms.Button buttonHistoria;
     }
 }
 
