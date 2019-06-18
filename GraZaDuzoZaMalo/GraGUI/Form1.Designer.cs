@@ -37,7 +37,6 @@ namespace GraGUI
             this.labelDo = new System.Windows.Forms.Label();
             this.textBoxOd = new System.Windows.Forms.TextBox();
             this.labelOd = new System.Windows.Forms.Label();
-            this.buttonPrzerwij = new System.Windows.Forms.Button();
             this.labelOdgadnij = new System.Windows.Forms.Label();
             this.labelCzas = new System.Windows.Forms.Label();
             this.textBoxTwojaLiczba = new System.Windows.Forms.TextBox();
@@ -45,6 +44,8 @@ namespace GraGUI
             this.buttonSprawdz = new System.Windows.Forms.Button();
             this.buttonZakoncz = new System.Windows.Forms.Button();
             this.buttonHistoria = new System.Windows.Forms.Button();
+            this.buttonJakGrac = new System.Windows.Forms.Button();
+            this.textBox1Wynik = new System.Windows.Forms.TextBox();
             this.groupBoxLosuj.SuspendLayout();
             this.groupBoxZgaduj.SuspendLayout();
             this.SuspendLayout();
@@ -116,17 +117,6 @@ namespace GraGUI
             this.labelOd.TabIndex = 0;
             this.labelOd.Text = "Zakres od:";
             // 
-            // buttonPrzerwij
-            // 
-            this.buttonPrzerwij.Location = new System.Drawing.Point(219, 12);
-            this.buttonPrzerwij.Name = "buttonPrzerwij";
-            this.buttonPrzerwij.Size = new System.Drawing.Size(75, 23);
-            this.buttonPrzerwij.TabIndex = 2;
-            this.buttonPrzerwij.Text = "Przerwij";
-            this.buttonPrzerwij.UseVisualStyleBackColor = true;
-            this.buttonPrzerwij.Visible = false;
-            this.buttonPrzerwij.Click += new System.EventHandler(this.ButtonPrzerwij_Click);
-            // 
             // labelOdgadnij
             // 
             this.labelOdgadnij.AutoSize = true;
@@ -151,6 +141,7 @@ namespace GraGUI
             this.textBoxTwojaLiczba.Name = "textBoxTwojaLiczba";
             this.textBoxTwojaLiczba.Size = new System.Drawing.Size(100, 20);
             this.textBoxTwojaLiczba.TabIndex = 5;
+            this.textBoxTwojaLiczba.TextChanged += new System.EventHandler(this.textBoxTwojaLiczba_TextChanged);
             // 
             // groupBoxZgaduj
             // 
@@ -173,6 +164,7 @@ namespace GraGUI
             this.buttonSprawdz.TabIndex = 6;
             this.buttonSprawdz.Text = "Sprawdź";
             this.buttonSprawdz.UseVisualStyleBackColor = true;
+            this.buttonSprawdz.Click += new System.EventHandler(this.buttonSprawdz_Click);
             // 
             // buttonZakoncz
             // 
@@ -194,24 +186,46 @@ namespace GraGUI
             this.buttonHistoria.Text = "Historia";
             this.buttonHistoria.UseVisualStyleBackColor = true;
             // 
+            // buttonJakGrac
+            // 
+            this.buttonJakGrac.Location = new System.Drawing.Point(220, 13);
+            this.buttonJakGrac.Name = "buttonJakGrac";
+            this.buttonJakGrac.Size = new System.Drawing.Size(75, 23);
+            this.buttonJakGrac.TabIndex = 9;
+            this.buttonJakGrac.Text = "Jak grać?";
+            this.buttonJakGrac.UseVisualStyleBackColor = true;
+            this.buttonJakGrac.Click += new System.EventHandler(this.buttonJakGrac_Click);
+            // 
+            // textBox1Wynik
+            // 
+            this.textBox1Wynik.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.textBox1Wynik.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1Wynik.Location = new System.Drawing.Point(22, 246);
+            this.textBox1Wynik.Name = "textBox1Wynik";
+            this.textBox1Wynik.Size = new System.Drawing.Size(100, 13);
+            this.textBox1Wynik.TabIndex = 10;
+            this.textBox1Wynik.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 369);
+            this.ClientSize = new System.Drawing.Size(334, 393);
+            this.Controls.Add(this.textBox1Wynik);
+            this.Controls.Add(this.buttonJakGrac);
             this.Controls.Add(this.buttonHistoria);
             this.Controls.Add(this.buttonZakoncz);
             this.Controls.Add(this.groupBoxZgaduj);
-            this.Controls.Add(this.buttonPrzerwij);
             this.Controls.Add(this.groupBoxLosuj);
             this.Controls.Add(this.buttonNowaGra);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Gra Za dużo Za Mało";
             this.groupBoxLosuj.ResumeLayout(false);
             this.groupBoxLosuj.PerformLayout();
             this.groupBoxZgaduj.ResumeLayout(false);
             this.groupBoxZgaduj.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -224,7 +238,6 @@ namespace GraGUI
         private System.Windows.Forms.Label labelDo;
         private System.Windows.Forms.TextBox textBoxOd;
         private System.Windows.Forms.Label labelOd;
-        private System.Windows.Forms.Button buttonPrzerwij;
         private System.Windows.Forms.Label labelOdgadnij;
         private System.Windows.Forms.Label labelCzas;
         private System.Windows.Forms.TextBox textBoxTwojaLiczba;
@@ -232,6 +245,8 @@ namespace GraGUI
         private System.Windows.Forms.Button buttonSprawdz;
         private System.Windows.Forms.Button buttonZakoncz;
         private System.Windows.Forms.Button buttonHistoria;
+        private System.Windows.Forms.Button buttonJakGrac;
+        private System.Windows.Forms.TextBox textBox1Wynik;
     }
 }
 
