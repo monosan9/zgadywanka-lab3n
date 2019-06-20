@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ModelGry;
 using static ModelGry.Gra;
+using static ModelGry.Gra.Ruch;
 
 namespace GraGUI
 {
@@ -20,6 +21,8 @@ namespace GraGUI
         {
             InitializeComponent();
         }
+
+      
 
         private void ButtonNowaGra_Click(object sender, EventArgs e)
         {
@@ -81,7 +84,8 @@ namespace GraGUI
             try
             {
                 int c = int.Parse(textBoxTwojaLiczba.Text);
-               
+                
+
             }
 
             catch (FormatException)
@@ -90,15 +94,44 @@ namespace GraGUI
                     MessageBoxIcon.Warning);
             }
 
+            catch (ArgumentNullException)
+            {
+
+            }
+
 
         }
 
         //sprawdzenie trafienia
+
         private void buttonSprawdz_Click(object sender, EventArgs e)
         {
-            Odpowiedz odp = new Odpowiedz();
+
             textBox1Wynik.Visible = true;
-            
+
+            int c = int.Parse(textBoxTwojaLiczba.Text);
+            Odpowiedz odp = g.Ocena(c);
+            switch (odp)
+            {
+                case Odpowiedz.ZaMalo:
+                textBox1Wynik.Text="Za mało";
+                    break;
+
+                case Odpowiedz.ZaDuzo:
+                textBox1Wynik.Text="Za dużo";
+                    break;
+
+                case Odpowiedz.Trafiono:
+                 textBox1Wynik.Text="Trafiłeś!";
+                    break;
+            }
+                                 
+        } 
+
+        private void buttonHistoria_Click(object sender, EventArgs e)
+        {
+            Historia historia = new Historia();
+            historia.Show();
         }
     }
 }

@@ -185,6 +185,7 @@ namespace GraGUI
             this.buttonHistoria.TabIndex = 8;
             this.buttonHistoria.Text = "Historia";
             this.buttonHistoria.UseVisualStyleBackColor = true;
+            this.buttonHistoria.Click += new System.EventHandler(this.buttonHistoria_Click);
             // 
             // buttonJakGrac
             // 
@@ -204,6 +205,8 @@ namespace GraGUI
             this.textBox1Wynik.Name = "textBox1Wynik";
             this.textBox1Wynik.Size = new System.Drawing.Size(100, 13);
             this.textBox1Wynik.TabIndex = 10;
+            this.textBox1Wynik.Text = "Za mało";
+            this.textBox1Wynik.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1Wynik.Visible = false;
             // 
             // Form1
