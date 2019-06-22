@@ -30,6 +30,7 @@ namespace GraGUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonNowaGra = new System.Windows.Forms.Button();
             this.groupBoxLosuj = new System.Windows.Forms.GroupBox();
             this.buttonLosuj = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@ namespace GraGUI
             this.buttonHistoria = new System.Windows.Forms.Button();
             this.buttonJakGrac = new System.Windows.Forms.Button();
             this.textBox1Wynik = new System.Windows.Forms.TextBox();
+            this.buttonJeszczeRaz = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBoxLosuj.SuspendLayout();
             this.groupBoxZgaduj.SuspendLayout();
             this.SuspendLayout();
@@ -129,7 +132,7 @@ namespace GraGUI
             // labelCzas
             // 
             this.labelCzas.AutoSize = true;
-            this.labelCzas.Location = new System.Drawing.Point(204, 16);
+            this.labelCzas.Location = new System.Drawing.Point(224, 16);
             this.labelCzas.Name = "labelCzas";
             this.labelCzas.Size = new System.Drawing.Size(58, 13);
             this.labelCzas.TabIndex = 4;
@@ -209,11 +212,27 @@ namespace GraGUI
             this.textBox1Wynik.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1Wynik.Visible = false;
             // 
+            // buttonJeszczeRaz
+            // 
+            this.buttonJeszczeRaz.Location = new System.Drawing.Point(139, 12);
+            this.buttonJeszczeRaz.Name = "buttonJeszczeRaz";
+            this.buttonJeszczeRaz.Size = new System.Drawing.Size(75, 23);
+            this.buttonJeszczeRaz.TabIndex = 11;
+            this.buttonJeszczeRaz.Text = "Jeszcze raz";
+            this.buttonJeszczeRaz.UseVisualStyleBackColor = true;
+            this.buttonJeszczeRaz.Visible = false;
+            this.buttonJeszczeRaz.Click += new System.EventHandler(this.buttonJeszczeRaz_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 393);
+            this.Controls.Add(this.buttonJeszczeRaz);
             this.Controls.Add(this.textBox1Wynik);
             this.Controls.Add(this.buttonJakGrac);
             this.Controls.Add(this.buttonHistoria);
@@ -250,6 +269,8 @@ namespace GraGUI
         private System.Windows.Forms.Button buttonHistoria;
         private System.Windows.Forms.Button buttonJakGrac;
         private System.Windows.Forms.TextBox textBox1Wynik;
+        private System.Windows.Forms.Button buttonJeszczeRaz;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

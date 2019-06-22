@@ -11,13 +11,14 @@ using ModelGry;
 using static ModelGry.Gra;
 using static ModelGry.Gra.Ruch;
 
+
 namespace GraGUI
 {
     public partial class Form1 : Form
     {
         private Gra g;
 
-        public Form1()
+                public Form1()
         {
             InitializeComponent();
         }
@@ -29,14 +30,10 @@ namespace GraGUI
             groupBoxLosuj.Visible = true;
             buttonNowaGra.Enabled = false;
             buttonZakoncz.Visible = true;
-               
+        
             
         }
-        private void ButtonPrzerwij_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            
-        }
+       
 
         private void ButtonLosuj_Click(object sender, EventArgs e)
         {
@@ -46,6 +43,7 @@ namespace GraGUI
                 int a = int.Parse(textBoxOd.Text);
                 int b = int.Parse(textBoxDo.Text);
                 g = new Gra(a, b);
+                
             }
 
             catch (FormatException)
@@ -53,7 +51,9 @@ namespace GraGUI
                 MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
-            
+
+            buttonJeszczeRaz.Enabled = false;
+
             // utwórz grę
            
             textBoxOd.Enabled = false;
@@ -61,44 +61,25 @@ namespace GraGUI
             buttonLosuj.Enabled = false;
             groupBoxZgaduj.Visible = true;
             
-            
-
-            // wyświetl kolejne elementy formularza
            
         }
-        //zakoncz gre
-        private void ButtonZakoncz_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        //instrukcja obslugi
-        private void buttonJakGrac_Click(object sender, EventArgs e)
-        {
-            JakGrac jakGrac = new JakGrac();
-            jakGrac.Show();
-        }
-
+      
         //wytypuj liczbę
         private void textBoxTwojaLiczba_TextChanged(object sender, EventArgs e)
         {
+            
             try
             {
                 int c = int.Parse(textBoxTwojaLiczba.Text);
                 
-
             }
+             
+                catch (FormatException)
+                {
 
-            catch (FormatException)
-            {
-                MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
-
-            catch (ArgumentNullException)
-            {
-
-            }
-
+                    MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                } 
 
         }
 
@@ -108,6 +89,7 @@ namespace GraGUI
         {
 
             textBox1Wynik.Visible = true;
+            buttonJeszczeRaz.Enabled = true;
 
             int c = int.Parse(textBoxTwojaLiczba.Text);
             Odpowiedz odp = g.Ocena(c);
@@ -123,15 +105,52 @@ namespace GraGUI
 
                 case Odpowiedz.Trafiono:
                  textBox1Wynik.Text="Trafiłeś!";
+                    buttonNowaGra.Enabled = true;
+                    buttonSprawdz.Enabled = false;
+                    buttonJeszczeRaz.Visible = true;
                     break;
             }
-                                 
-        } 
+
+            
+
+        }
 
         private void buttonHistoria_Click(object sender, EventArgs e)
         {
-            Historia historia = new Historia();
-            historia.Show();
+
+            MessageBox.Show($"Odpowiedź: {g.Wylosowana},Liczba ruchów: {g.LicznikRuchow}, Czas: {DateTime.Now}");
+
+            
+        }
+
+        private void buttonJeszczeRaz_Click(object sender, EventArgs e)
+        {
+            buttonLosuj.Enabled = true;
+            textBoxOd.Enabled = true;
+            textBoxOd.Text = "";
+            textBoxDo.Text = "";
+            textBoxDo.Enabled = true;
+            groupBoxZgaduj.Visible = false;
+            textBox1Wynik.Visible = false;
+            textBoxTwojaLiczba.Text = "";
+            buttonSprawdz.Enabled = true;
+
+        }
+        //zakoncz gre
+        private void ButtonZakoncz_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //instrukcja obslugi
+        private void buttonJakGrac_Click(object sender, EventArgs e)
+        {
+            JakGrac jakGrac = new JakGrac();
+            jakGrac.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
