@@ -49,6 +49,7 @@ namespace GraGUI
             this.textBox1Wynik = new System.Windows.Forms.TextBox();
             this.buttonJeszczeRaz = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelTimer = new System.Windows.Forms.Label();
             this.groupBoxLosuj.SuspendLayout();
             this.groupBoxZgaduj.SuspendLayout();
             this.SuspendLayout();
@@ -148,6 +149,7 @@ namespace GraGUI
             // 
             // groupBoxZgaduj
             // 
+            this.groupBoxZgaduj.Controls.Add(this.labelTimer);
             this.groupBoxZgaduj.Controls.Add(this.buttonSprawdz);
             this.groupBoxZgaduj.Controls.Add(this.labelOdgadnij);
             this.groupBoxZgaduj.Controls.Add(this.labelCzas);
@@ -158,6 +160,7 @@ namespace GraGUI
             this.groupBoxZgaduj.TabIndex = 6;
             this.groupBoxZgaduj.TabStop = false;
             this.groupBoxZgaduj.Visible = false;
+           
             // 
             // buttonSprawdz
             // 
@@ -227,6 +230,15 @@ namespace GraGUI
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelTimer
+            // 
+            this.labelTimer.AutoSize = true;
+            this.labelTimer.Location = new System.Drawing.Point(235, 42);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(0, 13);
+            this.labelTimer.TabIndex = 7;
+            this.labelTimer.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +283,7 @@ namespace GraGUI
         private System.Windows.Forms.TextBox textBox1Wynik;
         private System.Windows.Forms.Button buttonJeszczeRaz;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelTimer;
     }
 }
 

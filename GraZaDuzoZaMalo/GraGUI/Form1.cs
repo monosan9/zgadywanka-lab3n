@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace GraGUI
             InitializeComponent();
         }
 
-      
+        int i = 0; //start timera
 
         private void ButtonNowaGra_Click(object sender, EventArgs e)
         {
@@ -60,26 +61,30 @@ namespace GraGUI
             textBoxDo.Enabled = false;
             buttonLosuj.Enabled = false;
             groupBoxZgaduj.Visible = true;
+            timer1.Enabled = true;
+            labelTimer.Visible = true;
             
-           
+            timer1.Interval = 1000;
+
         }
       
         //wytypuj liczbę
         private void textBoxTwojaLiczba_TextChanged(object sender, EventArgs e)
         {
-            
+
             try
             {
                 int c = int.Parse(textBoxTwojaLiczba.Text);
                 
             }
-             
-                catch (FormatException)
-                {
 
-                    MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                } 
+            catch (FormatException)
+            {
+
+                MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            
 
         }
 
@@ -108,9 +113,12 @@ namespace GraGUI
                     buttonNowaGra.Enabled = true;
                     buttonSprawdz.Enabled = false;
                     buttonJeszczeRaz.Visible = true;
+                    timer1.Stop();
+                    timer1.Enabled = false;
                     break;
             }
 
+            
             
 
         }
@@ -118,7 +126,8 @@ namespace GraGUI
         private void buttonHistoria_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show($"Odpowiedź: {g.Wylosowana},Liczba ruchów: {g.LicznikRuchow}, Czas: {DateTime.Now}");
+            MessageBox.Show($"Odpowiedź: {g.Wylosowana}, Liczba ruchów: {g.LicznikRuchow}, Czas: {labelTimer.Text}, Kiedy: {DateTime.Now }");
+            
 
             
         }
@@ -127,12 +136,12 @@ namespace GraGUI
         {
             buttonLosuj.Enabled = true;
             textBoxOd.Enabled = true;
-            textBoxOd.Text = "";
-            textBoxDo.Text = "";
+            textBoxOd.Clear();
+            textBoxDo.Clear();
             textBoxDo.Enabled = true;
             groupBoxZgaduj.Visible = false;
             textBox1Wynik.Visible = false;
-            textBoxTwojaLiczba.Text = "";
+            textBoxTwojaLiczba.Clear();
             buttonSprawdz.Enabled = true;
 
         }
@@ -150,7 +159,9 @@ namespace GraGUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            i++;
+            labelTimer.Text = i.ToString() + " Sek";
         }
+        
     }
 }
