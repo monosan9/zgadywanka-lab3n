@@ -40,13 +40,13 @@
             this.richTextBoxJakGrac.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.richTextBoxJakGrac.Location = new System.Drawing.Point(12, 12);
             this.richTextBoxJakGrac.Name = "richTextBoxJakGrac";
-            this.richTextBoxJakGrac.Size = new System.Drawing.Size(277, 209);
+            this.richTextBoxJakGrac.Size = new System.Drawing.Size(582, 313);
             this.richTextBoxJakGrac.TabIndex = 0;
             this.richTextBoxJakGrac.Text = resources.GetString("richTextBoxJakGrac.Text");
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(188, 255);
+            this.buttonOk.Location = new System.Drawing.Point(519, 302);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 300);
+            this.ClientSize = new System.Drawing.Size(606, 361);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.richTextBoxJakGrac);
             this.Name = "JakGrac";

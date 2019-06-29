@@ -41,50 +41,54 @@ namespace GraGUI
             // wczytaj zakres do losowania
             try
             {
-                int a = int.Parse(textBoxOd.Text);
-                int b = int.Parse(textBoxDo.Text);
+                int a = Int16.Parse(textBoxOd.Text);
+                int b = Int16.Parse(textBoxDo.Text);
                 g = new Gra(a, b);
-                
+
+
+                buttonJeszczeRaz.Enabled = false;
+                textBoxOd.Enabled = false;
+                textBoxDo.Enabled = false;
+                buttonLosuj.Enabled = false;
+                groupBoxZgaduj.Visible = true;
+                timer1.Enabled = true;
+                labelTimer.Visible = true;
+                timer1.Interval = 1000;
+
+
             }
 
             catch (FormatException)
             {
                 MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                textBoxOd.Text = " ";
+                textBoxDo.Text = " ";
+            }
+            catch (OverflowException)
+            {
+
+                MessageBox.Show("Wprowadzona liczba jest za duża.", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                textBoxOd.Text = " ";
+                textBoxDo.Text = " ";
             }
 
-            buttonJeszczeRaz.Enabled = false;
-
-            // utwórz grę
-           
-            textBoxOd.Enabled = false;
-            textBoxDo.Enabled = false;
-            buttonLosuj.Enabled = false;
-            groupBoxZgaduj.Visible = true;
-            timer1.Enabled = true;
-            labelTimer.Visible = true;
             
-            timer1.Interval = 1000;
 
         }
       
         //wytypuj liczbę
         private void textBoxTwojaLiczba_TextChanged(object sender, EventArgs e)
         {
-
             try
             {
                 int c = int.Parse(textBoxTwojaLiczba.Text);
-                
             }
-
-            catch (FormatException)
+            catch(FormatException)
             {
-
-                MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                textBoxTwojaLiczba.Text =" ";
             }
-            
 
         }
 
@@ -92,37 +96,60 @@ namespace GraGUI
 
         private void buttonSprawdz_Click(object sender, EventArgs e)
         {
-
-            textBox1Wynik.Visible = true;
-            buttonJeszczeRaz.Enabled = true;
-
-            int c = int.Parse(textBoxTwojaLiczba.Text);
-            Odpowiedz odp = g.Ocena(c);
-            switch (odp)
+            try
             {
-                case Odpowiedz.ZaMalo:
-                textBox1Wynik.Text="Za mało";
-                    break;
+                int c = Int16.Parse(textBoxTwojaLiczba.Text);
 
-                case Odpowiedz.ZaDuzo:
-                textBox1Wynik.Text="Za dużo";
-                    break;
+                textBox1Wynik.Visible = true;
+                buttonJeszczeRaz.Enabled = true;
 
-                case Odpowiedz.Trafiono:
-                 textBox1Wynik.Text="Trafiłeś!";
-                    buttonNowaGra.Enabled = true;
-                    buttonSprawdz.Enabled = false;
-                    buttonJeszczeRaz.Visible = true;
-                    timer1.Stop();
-                    timer1.Enabled = false;
-                    break;
+
+                Odpowiedz odp = g.Ocena(c);
+                switch (odp)
+                {
+                    case Odpowiedz.ZaMalo:
+                        textBox1Wynik.Text = "Za mało";
+                        textBox1Wynik.BackColor = Color.FromArgb(255, 128, 128);
+                        break;
+
+                    case Odpowiedz.ZaDuzo:
+                        textBox1Wynik.Text = "Za dużo";
+                        textBox1Wynik.BackColor = Color.FromArgb(255, 128, 128);
+
+                        break;
+
+                    case Odpowiedz.Trafiono:
+                        textBox1Wynik.Text = "Trafiłeś!";
+                        textBox1Wynik.BackColor = Color.GreenYellow;
+                        buttonNowaGra.Enabled = true;
+                        buttonSprawdz.Enabled = false;
+                        buttonJeszczeRaz.Visible = true;                                                
+                        buttonHistoria.Visible = true;
+                        buttonNowaGra.Enabled = false;
+                        timer1.Stop();
+                        i = 0;
+                        
+                        
+                        break;
+                }
             }
+            catch (FormatException)
+            {
 
-            
-            
+                MessageBox.Show("Błędny format danych. Wprowadź liczbę", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            } 
+
+            catch(OverflowException)
+            {
+
+                MessageBox.Show("Wprowadzona liczba jest za duża.", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
 
         }
 
+        //historia rundy
         private void buttonHistoria_Click(object sender, EventArgs e)
         {
 
@@ -131,7 +158,7 @@ namespace GraGUI
 
             
         }
-
+        // jeszcze raz
         private void buttonJeszczeRaz_Click(object sender, EventArgs e)
         {
             buttonLosuj.Enabled = true;
@@ -143,7 +170,9 @@ namespace GraGUI
             textBox1Wynik.Visible = false;
             textBoxTwojaLiczba.Clear();
             buttonSprawdz.Enabled = true;
-
+            labelTimer.Text = " ";
+            
+                         
         }
         //zakoncz gre
         private void ButtonZakoncz_Click(object sender, EventArgs e)

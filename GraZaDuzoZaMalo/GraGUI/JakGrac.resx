@@ -120,8 +120,14 @@
   <data name="richTextBoxJakGrac.Text" xml:space="preserve">
     <value>Jak grać?
 
-W celu rozpoczęcia gry kliknij "Nowa Gra". Gra polega na odgadnięciu liczby z wybranego przez siebie zakresu liczb.
-Najpierw trzeba wybrać liczbe rozpoczynająca zakres a następnie liczbę ją kończącą. Aby rozpocząc zgadywanie kliknij "Wylosuj"
-W każdym momencie możesz zakończyć grę klikając "Zakończ".</value>
+W celu rozpoczęcia gry kliknij "Nowa Gra". Gra polega na odgadnięciu liczby z wybranego przez siebie zakresu liczb. 
+Wybierz liczbę rozpoczynającą zakres a następnie liczbę ją kończącą. Aby rozpocząć zgadywanie kliknij "Wylosuj".
+
+Następnie spróbuj odgadnąć, jaką liczbę wylosowała gra. W tym celu wprowadź swoją odpwiedź i kliknij "Sprawdź". 
+Gra podpowie Ci czy wylosowana przez Ciebie liczba jest za duża, za mała czy może od razu ją odgadnąłeś. 
+
+Kiedy już odgadniesz wylosowaną liczbę możesz zobaczyć podsumowanie rundy klikając na przycisk "Historia".
+
+Jeśli chcesz kontynuować zabawę kliknij "Jeszcze raz". W każdym momencie możesz zakończyć grę przyciskiem "Zakończ".</value>
   </data>
 </root>

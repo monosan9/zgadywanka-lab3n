@@ -42,6 +42,7 @@ namespace GraGUI
             this.labelCzas = new System.Windows.Forms.Label();
             this.textBoxTwojaLiczba = new System.Windows.Forms.TextBox();
             this.groupBoxZgaduj = new System.Windows.Forms.GroupBox();
+            this.labelTimer = new System.Windows.Forms.Label();
             this.buttonSprawdz = new System.Windows.Forms.Button();
             this.buttonZakoncz = new System.Windows.Forms.Button();
             this.buttonHistoria = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace GraGUI
             this.textBox1Wynik = new System.Windows.Forms.TextBox();
             this.buttonJeszczeRaz = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelTimer = new System.Windows.Forms.Label();
             this.groupBoxLosuj.SuspendLayout();
             this.groupBoxZgaduj.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +141,7 @@ namespace GraGUI
             // 
             // textBoxTwojaLiczba
             // 
+            this.textBoxTwojaLiczba.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxTwojaLiczba.Location = new System.Drawing.Point(9, 42);
             this.textBoxTwojaLiczba.Name = "textBoxTwojaLiczba";
             this.textBoxTwojaLiczba.Size = new System.Drawing.Size(100, 20);
@@ -160,7 +161,16 @@ namespace GraGUI
             this.groupBoxZgaduj.TabIndex = 6;
             this.groupBoxZgaduj.TabStop = false;
             this.groupBoxZgaduj.Visible = false;
-           
+            
+            // 
+            // labelTimer
+            // 
+            this.labelTimer.AutoSize = true;
+            this.labelTimer.Location = new System.Drawing.Point(235, 42);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(0, 13);
+            this.labelTimer.TabIndex = 7;
+            this.labelTimer.Visible = false;
             // 
             // buttonSprawdz
             // 
@@ -191,6 +201,7 @@ namespace GraGUI
             this.buttonHistoria.TabIndex = 8;
             this.buttonHistoria.Text = "Historia";
             this.buttonHistoria.UseVisualStyleBackColor = true;
+            this.buttonHistoria.Visible = false;
             this.buttonHistoria.Click += new System.EventHandler(this.buttonHistoria_Click);
             // 
             // buttonJakGrac
@@ -229,15 +240,6 @@ namespace GraGUI
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // labelTimer
-            // 
-            this.labelTimer.AutoSize = true;
-            this.labelTimer.Location = new System.Drawing.Point(235, 42);
-            this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(0, 13);
-            this.labelTimer.TabIndex = 7;
-            this.labelTimer.Visible = false;
             // 
             // Form1
             // 
