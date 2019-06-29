@@ -9,18 +9,15 @@ Projekt realizowany na zajęciach grupy lab3n
 
 ##Rozdział 1
 
-swndiowfneiw
+Gra Za dużo Za mało
 
 ## Rozdział 1.1
+Gra Monolitycznie
+Gra Proceduralnie
+Model Gry
+Unit Test
+Gra GUI
 
-dfewionfiewnfgopew
 
-vmeowpfgiewnvg ewopfjoe
-femwopmeow 
-```csharp
-int x = 1;
-int y = x + 2;
-Console.Writeline(x);
-```
 
 
